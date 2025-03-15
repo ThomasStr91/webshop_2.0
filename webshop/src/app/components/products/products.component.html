@@ -1,1 +1,4 @@
-<p>products works!</p>
+<div class="container">
+<app-product *ngFor="let item of products" [childProduct] = "item"></app-product>
+</div>
+ 

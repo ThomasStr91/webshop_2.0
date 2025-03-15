@@ -12,7 +12,7 @@ export class LoginService {
   private loggedIn = signal(this.hasAccess());
   isLoggedIn = computed(() => this.loggedIn())
 
-  private static BASKET_URL = "http://localhost:3000/login"
+  private static LOGIN_URL = "http://localhost:3000/login"
 
   constructor(
     private router: Router,
@@ -25,7 +25,7 @@ export class LoginService {
 
 
   login(userLogin: UserLoginDto): Observable<UserResponseDto> {
-    return this.httpClient.post<UserResponseDto>(`${LoginService.BASKET_URL}`, userLogin)
+    return this.httpClient.post<UserResponseDto>(`${LoginService.LOGIN_URL}`, userLogin)
     .pipe(tap((user: UserResponseDto) => {
       localStorage.setItem('currentUser', user.id);
       console.log("login als", userLogin);
