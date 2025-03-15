@@ -1,6 +1,6 @@
 <mat-card appearance="outlined" class="product-details">
-  <img [src]="childProduct?.avatar" mat-card-image class="product-picture">
-  <img mat-card-image [src]="'../../assets/'+ childProduct?.avatar" alt="Tiger">
+ 
+  <img mat-card-image [src]="'../../'+ childProduct?.avatar" class="product-picture">
      <mat-card-content class="product-name">{{childProduct?.name}}</mat-card-content>
      <mat-card-content class="product-description">{{childProduct?.description}}</mat-card-content>
      <mat-card-content class="product-price">{{childProduct?.price}} €</mat-card-content>
