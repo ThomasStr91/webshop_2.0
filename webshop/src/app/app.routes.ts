@@ -6,11 +6,12 @@ import { OrderHistoryComponent } from './components/order-history/order-history.
 import { PageNotFoundComponent } from './components/page-not-found/page-not-found.component';
 import { LayoutComponent } from './components/layout/layout.component';
 import { ProductsComponent } from './components/products/products.component';
+import { authGuard } from './guards/auth.guard';
 
 export const routes: Routes = [
     { path: 'layout', component: LayoutComponent},
     { path: 'login', component: LoginComponent },
-    { path: 'products', component: ProductsComponent},
+    { path: 'products', component: ProductsComponent, canActivate: [authGuard]},
     { path: '', redirectTo: 'login', pathMatch: 'full'},
     { path: 'basket', component: BasketItemComponent},
     { path: 'users', component: UserManagementComponent },

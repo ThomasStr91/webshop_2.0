@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-import { MatToolbarModule} from '@angular/material/toolbar'
+import { Component, computed, OnInit } from '@angular/core';
+import { MatToolbarModule } from '@angular/material/toolbar'
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 import { Router, RouterLink, RouterModule } from '@angular/router';
@@ -12,9 +12,9 @@ import { Subscription } from 'rxjs';
 @Component({
   selector: 'app-layout',
   imports: [
-    MatToolbarModule, 
+    MatToolbarModule,
     MatIconModule,
-    MatButtonModule, 
+    MatButtonModule,
     RouterLink,
     RouterModule,
     CommonModule
@@ -25,19 +25,16 @@ import { Subscription } from 'rxjs';
 export class LayoutComponent {
 
 
-
   constructor(
     private router: Router,
     private loginService: LoginService,
-  ){
+  ) {
+  }
+  get isLoggedIn(): Boolean {
+    return this.loginService.isLoggedIn();
     
   }
-
- logout(){
-
- }
-
- isLoggedIn(){
-
- }
+  logout() {
+    this.loginService.logout()
+  }
 }
