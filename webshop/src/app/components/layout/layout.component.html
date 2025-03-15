@@ -1,0 +1,25 @@
+<mat-toolbar>
+    <button class="title-button" routerLink="shopping-goods">GetItAll </button>
+    <span class="example-spacer"></span>
+    <!-- <button mat-button routerLink="users" *ngIf="admin">Userverwaltung</button> -->
+
+    <button mat-icon-button class="example-icon" routerLink="basket">
+        <mat-icon>shopping_cart</mat-icon>
+    </button>
+
+    <div>
+        <button mat-button routerLink="history" *ngIf="isLoggedIn()">Verlauf</button>
+        <button mat-button (click)="logout()" *ngIf="isLoggedIn()">Logout</button>
+        <!-- <button mat-button *ngIf="!isLoggedIn()" routerLink="login">Login</button> -->
+    </div>
+
+    <!-- <div>
+      <button mat-button *ngIf="isLoggedIn(); 
+    else loginButton" (click)="logout()">Logout</button>
+    <ng-template #loginButton>
+        <button mat-button class="example-icon" routerLink="/">Login</button>
+      </ng-template>
+    </div> -->
+</mat-toolbar>
+
+<router-outlet></router-outlet>
