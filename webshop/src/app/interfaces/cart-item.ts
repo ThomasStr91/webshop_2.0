@@ -1,11 +1,11 @@
-export interface BasketItem {
+export interface CartItem {
     id: string; 
     productId: string; 
     price: number; 
     name: string; 
 }
 
-export interface createBasketItemDto {
+export interface createCartItemDto {
     productId: string; 
     name: string; 
     price: number; 
